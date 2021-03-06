@@ -1,0 +1,27 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "yes",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/checkers-GM/note-taker.git"
+  },
+  "keywords": [
+    "no"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/checkers-GM/note-taker/issues"
+  },
+  "homepage": "https://github.com/checkers-GM/note-taker#readme"
+}
