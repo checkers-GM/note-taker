@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
