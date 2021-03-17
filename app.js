@@ -33,17 +33,21 @@ app.post("/api/notes", function (req, res) {
   }
 });
 
-// delete route to delete 
-app.delete("/api/notes/:id", function (req, res){
+// delete route to delete
+app.delete("/api/notes/:id", function (req, res) {
   console.log(req.params.id);
   var deleteNoteID = req.params.id;
   notes.splice(deleteNoteID, 1);
-  for (i = 0, i < notes.length; i++) {
-    notes[i].id=i;
-    fs.writeFileSync("db.json", JSON.stringify(notes), function(err){
-      if (err)
-      throw err 
+  for (i = 0, i < notes.length; i++; ) {
+    notes[i].id = i;
+    fs.writeFileSync("db.json", JSON.stringify(notes), function (err) {
+      if (err) throw err;
     });
-    res.json({status:"success"})
+    res.json({ status: "success" });
   }
-})
+});
+
+// Serve the data to the web page
+app.listen(PORT, function () {
+  console.log("App listening on PORT " + PORT);
+});
