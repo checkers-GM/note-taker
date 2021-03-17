@@ -29,6 +29,21 @@ app.post("/api/notes", function (req, res) {
   notes.push(newNote);
   res.json(newNote);
   for (i = 0; i < notes.length; i++) {
-    notes[i].id = 1;
+    notes[i].id = i;
   }
 });
+
+// delete route to delete 
+app.delete("/api/notes/:id", function (req, res){
+  console.log(req.params.id);
+  var deleteNoteID = req.params.id;
+  notes.splice(deleteNoteID, 1);
+  for (i = 0, i < notes.length; i++) {
+    notes[i].id=i;
+    fs.writeFileSync("db.json", JSON.stringify(notes), function(err){
+      if (err)
+      throw err 
+    });
+    res.json({status:"success"})
+  }
+})
