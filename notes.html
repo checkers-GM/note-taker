@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taking Application</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-brand"></a>
+
+      <div class="buttons">
+        <button class="save-note"></button>
+        <button class="new-note"></button>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 list-container">
+          <div class="card">
+            <ul class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <input type="text" placeholder="Enter Note Title" class="note-title" />
+        <textarea class="note-textarea" placeholder="Note Text"></textarea>
+      </div>
+    </div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

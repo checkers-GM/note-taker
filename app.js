@@ -2,19 +2,15 @@ const express = require("express");
 var path = require("path");
 var fs = require("fs");
 var notes;
-
 const app = express();
 const PORT = 1234;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const dbJson = require("db.json");
+const dbjson = require("./db.json");
 
 //inlude routes
-
-// require("./apiRoutes");
-// require("./htmlRoutes");
 
 // get to post notes that are in database
 app.get("/api/notes", function (req, res) {
@@ -31,6 +27,7 @@ app.post("/api/notes", function (req, res) {
   for (i = 0; i < notes.length; i++) {
     notes[i].id = i;
   }
+  $;
 });
 
 // delete route to delete
@@ -41,11 +38,13 @@ app.delete("/api/notes/:id", function (req, res) {
   for (i = 0, i < notes.length; i++; ) {
     notes[i].id = i;
     fs.writeFileSync("db.json", JSON.stringify(notes), function (err) {
-      if (err) throw err;
+      //if (err) throw err;
     });
     res.json({ status: "success" });
   }
 });
+
+app.use(express.static(__filename + "notes.html"));
 
 // Serve the data to the web page
 app.listen(PORT, function () {
